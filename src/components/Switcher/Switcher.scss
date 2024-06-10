@@ -1,0 +1,11 @@
+.search {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.switcher {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}

@@ -1,0 +1,48 @@
+.header {
+  width: 100%;
+  padding: 32px;
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .middle {
+    .link {
+      font-weight: 400;
+      font-size: 18px;
+      font-family: Inter, sans-serif;
+      color: #000000;
+      padding: 15px;
+      // Добавить серость при наведении
+      &.active {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .left {
+
+    h4 {
+      font-weight: 600;
+      font-size: 18px;
+      font-family: Inter, sans-serif;
+      color: #000000;
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .profile_picture {
+      background-color: black;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

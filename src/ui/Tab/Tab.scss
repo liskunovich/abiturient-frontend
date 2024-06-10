@@ -1,0 +1,14 @@
+.tab {
+  .MuiTabs-root {
+    background: #F7F7F7;
+    border-radius: 8px;
+    a {
+      color: #000000;
+    }
+    .MuiTabs-indicator {
+      height: 1px;
+      background: #000000;
+      border: 1px #000000;
+    }
+  }
+}

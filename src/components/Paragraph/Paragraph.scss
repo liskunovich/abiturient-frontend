@@ -1,0 +1,54 @@
+.paragraph {
+  width: 100%; // Ensure the paragraph container takes full width
+
+  .container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    display: flex; // Use flexbox for the container
+    justify-content: space-between; // Space between left and right sections
+    align-items: center; // Align items in the center vertically
+    .left h1 {
+      font-size: 64px;
+      font-weight: bold;
+      color: #000000;
+      font-family: Inter, sans-serif;
+    }
+    .left h2 {
+      font-size: 32px;
+      font-weight: 300;
+      color: #828282;
+      font-family: Inter, sans-serif;
+    }
+    .left h4 {
+      font-weight: 400;
+      color: #000000;
+      font-family: Inter, sans-serif;
+      font-size: 20px;
+    }
+    .right img {
+      height: 600px;
+    }
+  }
+
+  .left {
+    flex: 1; // Flex-grow to take up available space
+    padding-right: 20px; // Padding to create space between text and image
+
+    h1, h2, h4 {
+      margin: 0; // Remove default margins
+      padding-bottom: 10px; // Add some space between headings
+    }
+
+  }
+
+  .right {
+    flex: 1; // Flex-grow to take up available space
+    display: flex;
+    justify-content: flex-end; // Align image to the right
+
+    img {
+      max-width: 100%; // Ensure the image does not exceed its container
+      height: auto; // Maintain the aspect ratio
+    }
+  }
+}
