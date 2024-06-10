@@ -44,7 +44,7 @@ const Specializations = () => {
     ];
 
     return (
-        <div className="home">
+        <div className="specializations page">
             <Header/>
             <div className="container">
                 <div className="search_and_filter">

@@ -9,7 +9,7 @@ import HomeComponent from "./pages/home/Home.jsx";
 import Specializations from "./pages/specializations/Specializations.jsx";
 import Universities from "./pages/universities/Universities.jsx";
 import About from "./pages/about/Abouts.jsx";
-import Specialization from "./pages/specializations/Specialization.jsx";
+import Specialization from "./pages/specializations/modules/Specialization.jsx";
 
 const router = createBrowserRouter([
     {

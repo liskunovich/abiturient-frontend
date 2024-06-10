@@ -2,12 +2,13 @@ import Navigation from "../../components/Navigation/Navigation.jsx";
 import Button from "../../ui/Button";
 import Input from "../../ui/Input/Input.jsx";
 import "./Home.scss"
+import "../common/common.scss"
 import Footer from "../../components/Footer/Footer.jsx";
 
 
 const HomeComponent = () => {
     return (
-        <div className="home">
+        <div className="home page">
             <header><Navigation/></header>
             <main className="home__content">
                 <h1 className="home__title">Начните поиск</h1>
