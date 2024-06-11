@@ -4,6 +4,8 @@ import StickyHeadTable from "../../components/Table/Table.jsx";
 import Search from "../../components/Search/Search.jsx";
 import Filter from "../../components/Filter/Filter.jsx";
 import "./Universities.scss"
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 const Universities = () => {
     const columns = [
@@ -13,35 +15,43 @@ const Universities = () => {
             label: 'Название',
             minWidth: 170,
             align: 'left',
-            format: (value) => value.toLocaleString('ru-Ru'),
         },
         {
             id: 'min_pass_score',
             label: 'Количество студентов за последний год',
             minWidth: 170,
             align: 'center',
-            format: (value) => value.toLocaleString('ru-Ru'),
         },
         {
             id: 'additional_actions',
             label: null,
             minWidth: 170,
             align: 'right',
-            format: (value) => value.toLocaleString('ru-Ru'),
         },
 
     ];
 
+    const [universities, setUniversities] = useState([])
 
-    function createData(code, title, min_pass_score) {
-        return {code, title, min_pass_score};
+    const fetchSpecializations = () => {
+        axios.get('http://127.0.0.1:8080/statistic/universities',
+        ).then(r => {
+            const universitiesResponse = r.data;
+            const universitiesList = universitiesResponse.map(
+                s => {
+                    return {'code': s.code,
+                        'title': s.title,
+                        'min_pass_score': s.students_amount,
+                        'additional_actions': ''}
+                }
+            )
+            setUniversities(universitiesList);
+        })
+
     }
-
-    const rows = [
-        createData('India', 'Международный университет информационных технолоигй', '1231',),
-        createData('Kz', 'ВКТУ им. Д. Серикбаева', '1231', '12312'),
-
-    ];
+    useEffect(() => {
+        fetchSpecializations();
+    }, []);
 
     return (
         <div className="universities page">
@@ -51,7 +61,7 @@ const Universities = () => {
                     <Search placeholder={"Поиск по университетам"}/>
                     <Filter/>
                 </div>
-            <StickyHeadTable columns={columns} rows={rows}/>
+                <StickyHeadTable columns={columns} rows={universities}/>
             </div>
             <Footer/>
         </div>

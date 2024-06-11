@@ -4,42 +4,51 @@ import StickyHeadTable from "../../components/Table/Table.jsx";
 import Search from "../../components/Search/Search.jsx";
 import Filter from "../../components/Filter/Filter.jsx";
 import "./Specializations.scss";
+import axios from "axios";
+import {useEffect, useState} from "react";
+
 
 const Specializations = () => {
+    const [specializations, setSpecializations] = useState([])
+
+    const fetchSpecializations = () => {
+        axios.get('http://127.0.0.1:8080/statistic/specializations', {
+            params: {
+                concurs_type: 'COMMON',
+            }}).then(r => {
+            const specializationsResponse = r.data;
+            const specializationsList = specializationsResponse.map(
+                s => {
+                    return {'id': s.id, 'title': s.title, 'min_pass_score': s.min_pass_score, 'additional_actions': ''}
+                }
+            )
+            setSpecializations(specializationsList);
+        })
+
+    }
+    useEffect(() => {
+        fetchSpecializations();
+    }, []);
+
     const columns = [
-        {id: 'code', label: 'Код', minWidth: 100},
         {
             id: 'title',
             label: 'Название',
             minWidth: 170,
             align: 'left',
-            format: (value) => value.toLocaleString('ru-Ru'),
         },
         {
             id: 'min_pass_score',
             label: 'Минимальный проходной балл',
             minWidth: 170,
             align: 'center',
-            format: (value) => value.toLocaleString('ru-Ru'),
         },
         {
             id: 'additional_actions',
             label: null,
             minWidth: 170,
             align: 'right',
-            format: (value) => value.toLocaleString('ru-Ru'),
         },
-
-    ];
-
-
-    function createData(code, title, min_pass_score) {
-        return {code, title, min_pass_score};
-    }
-
-    const rows = [
-        createData('India', 'Международный университет информационных технолоигй', '1231',),
-        createData('Kz', 'ВКТУ им. Д. Серикбаева', '1231', '12312'),
 
     ];
 
@@ -51,7 +60,7 @@ const Specializations = () => {
                     <Search placeholder={"Поиск по специальностям"}/>
                     <Filter/>
                 </div>
-            <StickyHeadTable columns={columns} rows={rows}/>
+                <StickyHeadTable columns={columns} rows={specializations}/>
             </div>
 
             <Footer/>

@@ -18,4 +18,40 @@
     border: 1px solid #E0E0E0;
     border-radius: 8px;
   }
+
+  .first-statistics {
+    padding-top: 32px;
+    display: flex;
+    gap: 20px;
+    border-radius: 8px;
+    flex-direction: row;
+
+    .line-chart {
+      border: 1px solid #E0E0E0;
+      border-radius: 8px;
+      width: 100%;
+    }
+
+    .universities {
+      width: 80%;
+    }
+  }
+  .second-statistics {
+    padding-top: 32px;
+    display: flex;
+    gap: 20px;
+    border-radius: 8px;
+    flex-direction: row;
+
+    .bar-chart {
+      border: 1px solid #E0E0E0;
+      border-radius: 8px;
+      width: 80%;
+    }
+
+    .job-offers {
+      width: 60%;
+    }
+  }
+
 }

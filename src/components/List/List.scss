@@ -1,0 +1,24 @@
+.list {
+  .MuiList-root {
+
+  }
+  .MuiButtonBase-root{
+    .MuiListItemText-root {
+      font-family: Inter, sans-serif !important;
+      margin: 0;
+      .MuiTypography-root {
+        &:hover {
+          color: #000000;
+        }
+
+        &:after {
+          color: #000000;
+        }
+      }
+    }
+  }
+
+
+  overflow: auto;
+
+}
