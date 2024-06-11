@@ -44,7 +44,7 @@ const Universities = () => {
     ];
 
     return (
-        <div className="universities">
+        <div className="universities page">
             <Header/>
             <div className="container">
                 <div className="search_and_filter">
