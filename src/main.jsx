@@ -10,6 +10,7 @@ import Specializations from "./pages/specializations/Specializations.jsx";
 import Universities from "./pages/universities/Universities.jsx";
 import About from "./pages/about/Abouts.jsx";
 import Specialization from "./pages/specializations/modules/Specialization.jsx";
+import Profile from "./pages/profile/Profile.jsx";
 import {LoaderSpec} from "./loaders/Specialization.js";
 
 const router = createBrowserRouter([
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         element: <Specialization/>,
         loader: LoaderSpec
     },
+    {
+        path: "/profile",
+        element: <Profile/>,
+    },
+
 
 ]);
 

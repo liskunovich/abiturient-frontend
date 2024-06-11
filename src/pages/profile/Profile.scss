@@ -1,0 +1,35 @@
+.tile {
+  padding: 1.5em;
+  background-color: #fff;
+}
+
+.profile_container {
+  display: flex;
+  padding: 32px 0 32px 124px;
+  color: black;
+}
+
+.profile_container > * + * {
+  margin-top: 0;
+  margin-left: 1.5em;
+}
+
+.profile_edit {
+  flex: 1;
+}
+
+.profile_sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile_sidebar > .tile {
+  flex: 1;
+}
+
+.profile_section {
+  padding-bottom: 30px;
+}
+
+
