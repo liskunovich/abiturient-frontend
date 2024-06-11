@@ -25,10 +25,9 @@ export default function StickyHeadTable({columns, rows}) {
         setPage(0);
     };
 
-
     return (
             <Paper sx={{width: '100%', overflow: 'hidden', boxShadow: 'none'}}>
-                <TableContainer className={"table"} sx={{maxHeight: 440}}>
+                <TableContainer className={"table"} sx={{maxHeight: 550}}>
                     <Table stickyHeader aria-label="sticky table">
                         <TableHead>
                             <TableRow>
@@ -74,12 +73,12 @@ export default function StickyHeadTable({columns, rows}) {
                 </TableContainer>
                 <TablePagination
                     language="ru"
-                    rowsPerPageOptions={[10, 25, 50]}
                     component="div"
                     count={rows.length}
                     rowsPerPage={rowsPerPage}
                     page={page}
                     onPageChange={handleChangePage}
+                    rowsPerPageOptions={[]}
                     onRowsPerPageChange={handleChangeRowsPerPage}
                     labelDisplayedRows={
                         ({from, to, count}) => {
